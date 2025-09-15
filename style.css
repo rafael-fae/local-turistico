@@ -1,4 +1,4 @@
-/* --- 1. Reset Básico e Variáveis de Design (das imagens) --- */
+/* --- 1. Reset Básico e Variáveis de Design --- */
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +14,12 @@
   --text-tertiary: #696969;
   --text-headline: #e1624f;
 
+  /* Cores de Destaque (Accent) para as tags */
+  --accent-blue: #0c51a7;
+  --accent-orange: #e95e10;
+  --accent-pink: #e5245e;
+  --accent-purple: #591b98;
+
   /* Fonte do Style Guide */
   --font-family: "Open Sans", sans-serif;
 }
@@ -22,15 +28,13 @@
 body {
   background-color: var(--background-default);
   font-family: var(--font-family);
-
-  /* Centraliza o conteúdo principal */
   display: flex;
   justify-content: center;
   padding: 40px 20px;
 }
 
 main {
-  max-width: 800px;
+  max-width: 1120px;
   width: 100%;
 }
 
@@ -38,48 +42,50 @@ img {
   width: 100%;
   display: block;
   border-radius: 28px;
+  margin: 40px 0px;
 }
 
-/* --- 3. Tipografia (valores exatos da imagem) --- */
+/* --- 3. Tipografia --- */
 h1 {
   font-size: 36px;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   color: var(--text-primary);
+  margin-bottom: 16px;
 }
 
 h2 {
   font-size: 32px;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
+  margin-bottom: 8px;
   color: var(--text-primary);
 }
 
 h3 {
   font-size: 28px;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   color: var(--text-primary);
+  margin-bottom: 16px;
 }
 
 h4 {
-  font-size: 16px; /* A imagem indica que "headline" tem 16px */
-  font-weight: 700; /* Bold */
+  font-size: 16px;
+  font-weight: 700;
   color: var(--text-headline);
-  text-transform: uppercase; /* Um estilo comum para headlines */
+  text-transform: uppercase;
   margin-bottom: 8px;
 }
 
 p {
   font-size: 16px;
-  font-weight: 400; /* Regular */
+  font-weight: 400;
   color: var(--text-secondary);
-  line-height: 1.6; /* Melhora a legibilidade */
+  line-height: 1.5;
+  letter-spacing: 0.32px;
 }
 
 /* --- 4. Espaçamentos e Estrutura --- */
-
-/* Espaçamento entre as seções principais */
 section,
-.tourist-spots,
-.final-paragraph {
+.tourist-spots {
   margin-bottom: 48px;
 }
 
@@ -89,37 +95,102 @@ section,
   object-fit: cover;
 }
 
-.content-section h1 {
-  margin-bottom: 16px;
+.intro-description p {
+  margin-top: 24px;
+  text-align: center;
 }
 
-/* Estilização da lista de locais */
+.tourist-spots img {
+  margin-bottom: 24px;
+  max-height: 350px;
+  object-fit: cover;
+}
+
+/* --- 5. Estilização das Tags --- */
 .tourist-spots {
-  list-style: none; /* Remove os marcadores numéricos */
+  list-style: none;
 }
 
 .tourist-spots li {
   margin-bottom: 40px;
 }
 
-.tourist-spots li:last-child {
-  margin-bottom: 0;
+.tags-container {
+  margin-top: 24px;
 }
 
-.tourist-spots img {
-  margin-bottom: 24px;
-  max-height: 350px;
-  object-fit: fill; /* Garante que a imagem preencha o espaço sem distorção */
+.tags-container h5 {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-secondary);
 }
 
-.tourist-spots h3 {
-  margin-bottom: 8px;
+.tags-container ul {
+  list-style: none;
+  padding-left: 5px;
 }
 
-/* --- 5. Estilo do Divisor --- */
+.tags-container ul li {
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 2px;
+}
+
+.tags-container ul li::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--text-secondary);
+
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+.tags-container .tag-blue a {
+  color: var(--accent-blue);
+}
+.tags-container .tag-orange a {
+  color: var(--accent-orange);
+}
+.tags-container .tag-pink a {
+  color: var(--accent-pink);
+}
+.tags-container .tag-purple a {
+  color: var(--accent-purple);
+}
+
+.tags-container a {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.last-paragraph p {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+/* --- 6. Estilo do Divisor --- */
 .divider {
   height: 1px;
-  background-color: var(--border-primary); /* Cor da borda do Style Guide */
+  background-color: var(--border-primary);
   border: none;
   margin: 48px 0;
+}
+
+/* --- 7. Estilo do Rodapé --- */
+footer {
+  text-align: center;
+  padding: 24px 0;
+  margin-top: 32px;
+}
+
+footer p {
+  font-family: Alice;
+  font-size: 16px;
+  color: var(--text-secondary);
 }
